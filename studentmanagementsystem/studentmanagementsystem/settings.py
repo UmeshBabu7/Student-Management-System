@@ -70,7 +70,7 @@ WSGI_APPLICATION = 'studentmanagementsystem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'studentmanagementsystem_database',
+        'NAME': 'student_database',
         'USER': 'root',
         'PASSWORD': '',
         'HOST':'localhost',
@@ -123,3 +123,5 @@ MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL="student_management_app.CustomUser"
