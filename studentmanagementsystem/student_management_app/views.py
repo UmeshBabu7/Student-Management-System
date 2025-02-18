@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse, HttpResponseRedirect
 from student_management_app.EmailBackEnd import EmailBackEnd
+from django.contrib import messages
 
 # Create your views here.
 
@@ -22,7 +23,8 @@ def doLogin(request):
             login(request,user)
             return HttpResponse("Email: "+request.POST.get("email")+" Password: "+request.POST.get("password"))
         else:
-            return HttpResponse("invalid login")
+            messages.error(request,"Invalid Login Details")
+            return HttpResponseRedirect("/")
 
 
 def GetUserDetails(request):
