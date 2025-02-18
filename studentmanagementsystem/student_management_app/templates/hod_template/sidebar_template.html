@@ -64,7 +64,7 @@
           </li>
           <li class="nav-item">
             {% url 'add_course' as add_course %}
-            <a href="" class="nav-link {% if request.path == add_course %} active {% endif %}">
+            <a href="{% url 'add_course' %}" class="nav-link {% if request.path == add_course %} active {% endif %}">
               <i class="nav-icon fas fa-th"></i>
               <p>
                 Add Course
